@@ -10,7 +10,7 @@ adc_pin2 = 'X8'
 trigger_pin2 = 'X2'
 
 data_sep = ','
-
+signal_threshold = 2500
 wifi_ssid = 'batnet'
 wifi_password = 'lebowski'
 break_character = '*'
