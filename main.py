@@ -1,21 +1,14 @@
-import settings
-from machine import Pin
-
-green = settings.green
-blue = settings.blue
-red = settings.red
-
-
-
-
 import usocket
 import time
 import gc
 import misc
 import measure
 import server
-import ujson
-    
+import ujson    
+import settings
+
+from machine import Pin
+
 green = settings.green
 blue = settings.blue
 red = settings.red
