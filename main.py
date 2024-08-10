@@ -9,20 +9,27 @@ import settings
 
 from machine import Pin
 
-green = settings.green
-blue = settings.blue
-red = settings.red
+green = settings.green # connecting to wifi
+red = settings.red # create server, wait for input
+blue = settings.blue # do measurement
+# all on: error in server
+
 
 gc.collect()
-server.connect2wifi()
-misc.boot_display_robot()
 
+#misc.boot_display_robot()
 #swich on 3V pin
 Pin.board.EN_3V3.value(1)
 
 
 while True:
+    green.on()
+    server.connect2wifi()
+    green.off()
+    
+    red.on()
     data_server = server.Server()
+    red.off()
     
     message = data_server.receive_data()
     message = message.split(settings.data_sep)
